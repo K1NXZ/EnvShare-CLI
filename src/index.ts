@@ -1,3 +1,5 @@
+#!/usr/bin/node
+
 import { Command } from '@commander-js/extra-typings'
 import fs from 'node:fs/promises'
 import inquirer from 'inquirer'

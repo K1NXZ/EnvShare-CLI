@@ -1,9 +1,12 @@
 {
   "name": "envshare-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A cli to share your environment variables with your team quickly.",
   "main": "./dist/cjs/index.js",
-  "bin": "./dist/cjs/index.js",
+  "bin": {
+    "envshare": "./dist/cjs/index.js",
+    "envshare-cli": "./dist/cjs/index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf dist && npx tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.types.json",

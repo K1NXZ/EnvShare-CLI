@@ -1,6 +1,6 @@
 {
   "name": "envshare-cli",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A cli to share your environment variables with your team quickly.",
   "main": "./dist/esm/index.js",
   "bin": {
@@ -26,7 +26,11 @@
     "email": "angelo.walczak@gmail.com",
     "url": "https://github.com/K1NXZ"
   },
-  "homepage": "https://github.com/K1NXZ/envshare",
+  "homepage": "https://github.com/K1NXZ/envshare-cli",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/K1NXZ/envshare-cli"
+  },
   "license": "MIT",
   "dependencies": {
     "@commander-js/extra-typings": "^11.0.0",

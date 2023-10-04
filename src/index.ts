@@ -112,7 +112,7 @@ ID: ${compositeKey}
         type: 'list',
         name: 'kind',
         message: 'What do you want to copy?',
-        choices: ['ID', 'Command'],
+        choices: ['Copy ID to share', 'Copy command to share'],
       },
     ])
 
@@ -123,7 +123,7 @@ ID: ${compositeKey}
           console.log(`ID "${compositeKey}" copied to clipboard`)
           break
         case 'Command':
-          const c = `npx envshare-cli fetch ${compositeKey}`
+          const c = `npx envshare-cli@latest fetch ${compositeKey}`
           ncp.copy(c)
           console.log(`Command "${c}" copied to clipboard`)
           break

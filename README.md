@@ -13,7 +13,7 @@ npm install -g envshare-cli
 or run directly with
 
 ```bash
-npx envshare-cli
+npx envshare-cli@latest
 ```
 
 ## Usage

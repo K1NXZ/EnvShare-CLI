@@ -10,6 +10,12 @@ To install EnvShare-CLI, you can use npm. Make sure you have [Node.js](https://n
 npm install -g envshare-cli
 ```
 
+or run directly with
+
+```bash
+npx envshare-cli
+```
+
 ## Usage
 
 ### Sharing an Environment File
@@ -17,7 +23,7 @@ npm install -g envshare-cli
 To share an environment file, use the `share` command.
 
 ```bash
-envshare-cli share
+npx envshare-cli share
 ```
 
 This command will prompt you to select an environment file (if multiple are available) and then upload it securely. You can specify optional TTL (Time to Live in seconds) and number of reads using the `-t` and `-r` options, respectively.
@@ -29,13 +35,13 @@ After sharing an environment file, EnvShare-CLI provides an option to copy the I
 To fetch an environment file, use the `fetch` command and provide the ID of the file you want to retrieve.
 
 ```bash
-envshare-cli fetch <ID>
+npx envshare-cli fetch <ID>
 ```
 
 You can also specify an output file using the `-o` option:bash
 
 ```bash
-envshare-cli fetch <ID> -o <output-file>;
+npx envshare-cli fetch <ID> -o <output-file>;
 ```
 
 EnvShare-CLI uses encryption to protect your environment files during transmission.

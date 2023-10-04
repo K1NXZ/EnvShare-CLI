@@ -1,6 +1,6 @@
 {
   "name": "envshare-cli",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A cli to share your environment variables with your team quickly.",
   "main": "./dist/esm/index.js",
   "bin": {

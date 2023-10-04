@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "rootDir": "src",
+    "strict": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "baseUrl": "./src"
+  },
+  "exclude": ["node_modules", "dist"]
+}

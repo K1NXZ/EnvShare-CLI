@@ -23,7 +23,7 @@ npx envshare-cli
 To share an environment file, use the `share` command.
 
 ```bash
-npx envshare-cli share
+npx envshare-cli@latest share
 ```
 
 This command will prompt you to select an environment file (if multiple are available) and then upload it securely. You can specify optional TTL (Time to Live in seconds) and number of reads using the `-t` and `-r` options, respectively.
@@ -35,13 +35,13 @@ After sharing an environment file, EnvShare-CLI provides an option to copy the I
 To fetch an environment file, use the `fetch` command and provide the ID of the file you want to retrieve.
 
 ```bash
-npx envshare-cli fetch <ID>
+npx envshare-cli@latest fetch <ID>
 ```
 
 You can also specify an output file using the `-o` option:bash
 
 ```bash
-npx envshare-cli fetch <ID> -o <output-file>;
+npx envshare-cli@latest fetch <ID> -o <output-file>;
 ```
 
 EnvShare-CLI uses encryption to protect your environment files during transmission.

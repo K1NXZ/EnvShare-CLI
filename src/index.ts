@@ -7,6 +7,7 @@ import path from 'node:path'
 import { decrypt, encrypt } from './lib/encryption.js'
 import { fromBase58, toBase58 } from './lib/base58.js'
 import ncp from 'copy-paste'
+import untildify from 'untildify'
 
 const program = new Command().name('envshare-cli').version('1.0.0')
 
@@ -136,14 +137,26 @@ program
   .argument('ID', 'ID of the env file to fetch')
   .option('-o, --output <path>', 'Output file')
   .action(async (ID, { output }) => {
+    let newOutput = output
     try {
-      const content = await fetchFile(ID)
-      if (output) {
-        await fs.writeFile(output, content)
-        console.log(`File written to ${output}`)
-        return
+      if (!output) {
+        const answers = await inquirer.prompt({
+          type: 'input',
+          name: 'filename',
+          message: 'Enter filename to save to',
+          default: '.env',
+        })
+        newOutput = answers.filename
       }
-    } catch {
+
+      newOutput = untildify(newOutput!)
+
+      const content = await fetchFile(ID)
+      await fs.writeFile(newOutput!, content)
+      console.log(`File written to ${newOutput}`)
+      await fs.writeFile(newOutput!, content)
+    } catch (e) {
+      console.log(e)
       console.error(`ID ${ID} not found`)
     }
   })

@@ -1,6 +1,6 @@
 {
   "name": "envshare-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A cli to share your environment variables with your team quickly.",
   "main": "./dist/cjs/index.js",
   "bin": "./dist/cjs/index.js",
@@ -53,5 +53,6 @@
     "LICENSE",
     "README.md",
     "package.json"
-  ]
+  ],
+  "type": "module"
 }

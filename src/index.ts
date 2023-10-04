@@ -1,4 +1,4 @@
-#!/usr/bin/node
+#!/usr/bin/env node
 
 import { Command } from '@commander-js/extra-typings'
 import fs from 'node:fs/promises'

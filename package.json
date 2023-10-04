@@ -1,15 +1,15 @@
 {
   "name": "envshare-cli",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A cli to share your environment variables with your team quickly.",
-  "main": "./dist/cjs/index.js",
+  "main": "./dist/esm/index.js",
   "bin": {
-    "envshare": "./dist/cjs/index.js",
-    "envshare-cli": "./dist/cjs/index.js"
+    "envshare": "./dist/esm/index.js",
+    "envshare-cli": "./dist/esm/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "rimraf dist && npx tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.types.json",
+    "build": "rimraf dist && npx tsc -b ./tsconfig.esm.json ./tsconfig.types.json",
     "prettier": "npx prettier --write .",
     "prepublishOnly": "npm run build"
   },
@@ -33,22 +33,20 @@
     "base-x": "^4.0.0",
     "commander": "^11.0.0",
     "copy-paste": "^1.5.3",
-    "glob": "^10.3.10",
     "inquirer": "^9.2.11"
   },
   "devDependencies": {
     "@types/copy-paste": "^1.1.31",
-    "@types/glob": "^8.1.0",
     "@types/inquirer": "^9.0.3",
     "@types/node": "^20.8.2",
     "rimraf": "^5.0.5",
     "typescript": "^5.2.2"
   },
   "exports": {
-    "./*": {
-      "types": "./build/types/*.d.ts",
-      "require": "./build/cjs/*.js",
-      "import": "./build/esm/*.js"
+    ".": {
+      "types": "./build/types/index.d.ts",
+      "import": "./build/esm/index.js",
+      "default": "./build/esm/index.js"
     }
   },
   "files": [

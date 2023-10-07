@@ -99,6 +99,7 @@ program
 Env file uploaded successfully.
 name: ${path.basename(envFilePath)}
 ID: ${compositeKey}
+Command: npx envshare-cli@latest fetch ${compositeKey}
       `
     )
 

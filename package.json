@@ -37,6 +37,7 @@
     "base-x": "^4.0.0",
     "commander": "^11.0.0",
     "copy-paste": "^1.5.3",
+    "detect-package-manager": "^3.0.1",
     "inquirer": "^9.2.11",
     "untildify": "^5.0.0"
   },

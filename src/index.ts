@@ -8,6 +8,7 @@ import { decrypt, encrypt } from './lib/encryption.js'
 import { fromBase58, toBase58 } from './lib/base58.js'
 import ncp from 'copy-paste'
 import untildify from 'untildify'
+import { fetchCommand } from 'lib/command.js'
 
 const program = new Command().name('envshare-cli').version('1.0.0')
 
@@ -93,13 +94,13 @@ program
 
     const envFilePath = path.join(process.cwd(), envFile!)
     const compositeKey = await uploadFile(envFilePath, ttl, reads)
-
+    const fc = await fetchCommand(compositeKey)
     console.log(
       `
 Env file uploaded successfully.
 name: ${path.basename(envFilePath)}
 ID: ${compositeKey}
-Command: npx envshare-cli@latest fetch ${compositeKey}
+Command: ${fc}
       `
     )
 
@@ -126,9 +127,8 @@ Command: npx envshare-cli@latest fetch ${compositeKey}
           console.log(`ID "${compositeKey}" copied to clipboard`)
           break
         case 'Command':
-          const c = `npx envshare-cli@latest fetch ${compositeKey}`
-          ncp.copy(c)
-          console.log(`Command "${c}" copied to clipboard`)
+          ncp.copy(fc)
+          console.log(`Command "${fc}" copied to clipboard`)
           break
       }
     }

@@ -109,16 +109,18 @@ Command: npx envshare-cli@latest fetch ${compositeKey}
         name: 'copy',
         message: 'Copy to clipboard?',
       },
-      {
-        type: 'list',
-        name: 'kind',
-        message: 'What do you want to copy?',
-        choices: ['Copy ID to share', 'Copy command to share'],
-      },
     ])
 
     if (copyAnswers.copy) {
-      switch (copyAnswers.kind) {
+      const copyAnswersKind = await inquirer.prompt([
+        {
+          type: 'list',
+          name: 'kind',
+          message: 'What do you want to copy?',
+          choices: ['Copy ID to share', 'Copy command to share'],
+        },
+      ])
+      switch (copyAnswersKind.kind) {
         case 'ID':
           ncp.copy(compositeKey)
           console.log(`ID "${compositeKey}" copied to clipboard`)

@@ -8,7 +8,7 @@ import { decrypt, encrypt } from './lib/encryption.js'
 import { fromBase58, toBase58 } from './lib/base58.js'
 import ncp from 'copy-paste'
 import untildify from 'untildify'
-import { fetchCommand } from 'lib/command.js'
+import { fetchCommand } from './lib/command.js'
 
 const program = new Command().name('envshare-cli').version('1.0.0')
 
